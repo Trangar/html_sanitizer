@@ -1,10 +1,11 @@
 [package]
 authors = ["Victor Koenders <victor.koenders@gmail.com>"]
 name = "html_sanitizer"
-version = "0.1.0"
-description = "A customizable HTML sanizier"
+version = "0.1.1"
+description = "A customizable HTML sanitizer"
 license = "MIT"
-repository = "https://github.com/victorkoenders/html_sanitizer"
+repository = "https://github.com/trangar/html_sanitizer"
+readme = "readme.md"
 
 [dependencies]
 html5ever = "0.22.3"
