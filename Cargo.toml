@@ -1,0 +1,10 @@
+[package]
+authors = ["Victor Koenders <victor.koenders@gmail.com>"]
+name = "html_sanitizer"
+version = "0.1.0"
+description = "A customizable HTML sanizier"
+license = "MIT"
+repository = "https://github.com/victorkoenders/html_sanitizer"
+
+[dependencies]
+html5ever = "*"
