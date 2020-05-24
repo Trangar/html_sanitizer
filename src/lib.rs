@@ -41,6 +41,7 @@ use html5ever::rcdom::{Handle, NodeData, RcDom};
 use html5ever::tendril::TendrilSink;
 use html5ever::tree_builder::TreeBuilderOpts;
 use std::io;
+use std::borrow::Cow;
 
 /// Create a tag parser.
 /// 
@@ -62,7 +63,7 @@ impl TagParser {
     /// Create a new tagparser with any Read source.
     /// 
     /// Suggested read targets are `std::fs::File` and `std::io::BufReader`.
-    pub fn new<A>(input: &mut A) -> Self
+    pub fn new<A>(input: &mut A) -> Result<Self, Vec<Cow<'static, str>>>
     where
         A: io::Read + Sized,
     {
@@ -78,9 +79,11 @@ impl TagParser {
             .from_utf8()
             .read_from(input)
             .unwrap();
-        println!("Errors: {:?}", dom.errors);
-
-        TagParser { dom }
+        if !dom.errors.is_empty() {
+            Err(dom.errors)
+        } else {
+            Ok(TagParser { dom })
+        }
     }
 
     fn internal_walk<F>(handle: &Handle, callback: &F) -> String
