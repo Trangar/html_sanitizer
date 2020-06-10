@@ -8,4 +8,4 @@ repository = "https://github.com/trangar/html_sanitizer"
 readme = "readme.md"
 
 [dependencies]
-html5ever = "0.22.3"
+html5ever = "0.25.1"
