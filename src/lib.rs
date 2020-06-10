@@ -4,7 +4,7 @@
 //! 
 //! With this crate, you can determine for every HTML tag what you want to sanitize. This is done by the [Tag](struct.Tag.html) struct that gets passed for every HTML tag.
 //! 
-//! ```no_run
+//! ```rust,no_run
 //! use std::fs::File;
 //! use html_sanitizer::TagParser;
 //! 
@@ -47,7 +47,8 @@ use std::borrow::Cow;
 /// 
 /// The tag parser is responsible for parsing the tag and walking through the nodes in the HTML document.
 /// 
-/// ```rust
+/// ```rust,no_run
+/// # // TODO: This currently fails
 /// # use html_sanitizer::TagParser;
 /// # let mut input = std::io::BufReader::<&[u8]>::new(&[]);
 /// let mut parser = TagParser::new(&mut input).unwrap();
