@@ -10,7 +10,7 @@
 //! 
 //! fn main() {
 //!     let mut file = File::open("your_html_document.html").unwrap();
-//!     let mut tag_parser = TagParser::new(&mut file);
+//!     let mut tag_parser = TagParser::new(&mut file).unwrap();
 //!     let result = tag_parser.walk(|tag| {
 //!         if tag.name == "html" || tag.name == "body" {
 //!             // ignore <html> and <body> tags, but still parse their children
@@ -50,7 +50,7 @@ use std::borrow::Cow;
 /// ```rust
 /// # use html_sanitizer::TagParser;
 /// # let mut input = std::io::BufReader::<&[u8]>::new(&[]);
-/// let mut parser = TagParser::new(&mut input);
+/// let mut parser = TagParser::new(&mut input).unwrap();
 /// parser.walk(|tag| {
 ///     // Do something with `tag` here
 /// });
