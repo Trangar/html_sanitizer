@@ -1,7 +1,5 @@
-extern crate html_sanitizer;
-
-use std::fs::File;
 use html_sanitizer::TagParser;
+use std::fs::File;
 
 fn main() {
     let input_file = "C:/Users/Victor/Documents/spain october 2018/transavia flight ticket.html";
@@ -28,7 +26,7 @@ fn main() {
                 }
             });
             println!("{}", result);
-        },
+        }
         Err(errors) => println!("Errors: {:?}", errors),
     };
 }

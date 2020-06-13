@@ -6,6 +6,8 @@ description = "A customizable HTML sanitizer"
 license = "MIT"
 repository = "https://github.com/trangar/html_sanitizer"
 readme = "readme.md"
+edition = "2018"
 
 [dependencies]
 html5ever = "0.25.1"
+markup5ever_rcdom = "0.1"
