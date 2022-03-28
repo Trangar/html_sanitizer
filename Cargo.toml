@@ -9,5 +9,5 @@ readme = "readme.md"
 edition = "2018"
 
 [dependencies]
-html5ever = "0.25.2"
+html5ever = "0.26.0"
 markup5ever_rcdom = "0.1"
