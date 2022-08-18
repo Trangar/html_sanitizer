@@ -10,4 +10,4 @@ edition = "2018"
 
 [dependencies]
 html5ever = "0.25.2"
-markup5ever_rcdom = "0.1"
+markup5ever_rcdom = "0.2"
